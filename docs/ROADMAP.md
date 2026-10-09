@@ -1,7 +1,7 @@
 # 개발 로드맵 및 현재 현황 (ROADMAP)
 
 업데이트: 2026-10-10
-현재 상태: **1차 개발 진행 중 — 기본 UI 및 공통 지갑 기초 코드 작성, 자동 검사 통과.**
+현재 상태: **1차 개발 진행 중 — 모던 다크 + 2D 인터랙티브 UI 시안 배포, 공통 지갑 기초 코드 유지, 자동 검사 통과.**
 
 ## 진행 상태 표기
 
@@ -25,6 +25,8 @@
 - [x] React + TypeScript + Vite 기본 프로젝트 구성
 - [x] CSS Modules/Variables 기본 토큰과 PC/모바일 공통 레이아웃
 - [x] 메뉴 탐색 (게임장/알바/뽑기/도감) 및 게임 종류 필터
+- [x] 반응형 2D 콘텐츠 타일 UI와 게임 전용 플레이 시안(주사위/하이로우, 코인 미차감)
+- [x] 뽑기 집게 위치/하강 UI 시안, 가챠 시리즈 탭, 알바 선택, 도감 필터 UI 시안
 - [x] Zustand 공통 지갑의 **기초**: 시작 600 C, 거래 ID 중복 방지, 음수/불법 정수 잔액 거부 (순수 함수 4개 단위 테스트)
 - [ ] 공통 지갑을 실제 미니게임/급여 처리와 통합하고 다중 탭·동시 요청 검증
 - [ ] localStorage 전체 게임 데이터 저장/불러오기 및 데이터 버전 검증 (현 시점은 **지갑 상태에 한해** persist 버전 1 설정)
@@ -32,16 +34,17 @@
 - [ ] 주사위 홀짝 게임 및 배당 정산
 - [ ] 하이로우 규칙/배당 확정과 구현
 - [x] 기본 UI/공통 지갑 코드의 TypeScript 검사·빌드·Vitest 단위 테스트
-- [x] PC/모바일 Playwright **기본 UI** 검사 (메뉴 전환, 게임 목록 필터, 폭 320px 가로 넘침: PC 3 + 모바일 3 = 6개 통과)
+- [x] PC/모바일 Playwright **UI 시안** 검사 (메뉴 전환·게임 필터·주사위·하이로우·집게 위치·320px 화면: 14개 통과)
 - [ ] 실제 미니게임/알바까지 포함하는 PC·모바일 전체 플레이 흐름 검증
 
 ### 현재 검증 기록
 
-- GitHub Actions: [Check, 실행 38001573834](https://github.com/y3ssam/mini-game-center/actions/runs/38001573834)
+- GitHub Actions: [최신 UI 시안 Check, 실행 38004047048](https://github.com/y3ssam/mini-game-center/actions/runs/38004047048)
+- GitHub Pages: https://y3ssam.github.io/mini-game-center/ (배포 성공)
 - `npm run typecheck`: 성공
 - `npm run build`: 성공
 - `npm test`: Vitest 단위 테스트 4개 통과
-- `npm run test:e2e`: Playwright Chromium UI 테스트 6개 통과 (데스크톱·모바일)
+- `npm run test:e2e`: Playwright Chromium UI 테스트 14개 통과 (데스크톱 7개·모바일 7개)
 - 로컬 PC·실기기 수동 검수: **미실행**
 - npm lockfile은 아직 저장소에 추가되지 않음. 의존성 고정 및 `npm ci` 전환은 후속 작업.
 
