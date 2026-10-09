@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { GameArtwork } from '../../components/common/GameArtwork';
-import { GameIcon } from '../../components/common/GameIcon';
 import styles from '../shared/FeaturePage.module.css';
 
 type Job = 'counter' | 'sorting';
