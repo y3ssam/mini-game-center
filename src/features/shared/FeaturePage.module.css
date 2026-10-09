@@ -20,25 +20,6 @@
 .previewTrack{height:7px;border-radius:99px;background:#34445c;overflow:hidden}
 .previewTrack>div{width:0;height:100%;background:#9fe9c2}
 .disabledAction{margin-top:auto;width:100%;min-height:48px;border:0;border-radius:8px;background:#39445a;color:#bcc6d5}
-.drawGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.drawTile{min-width:0;border-radius:13px;overflow:hidden;background:#1b2433;border:1px solid #38475d}
-.drawTile:hover,.drawTile:focus-within{border-color:#8093bc}
-.drawArt{height:clamp(160px,20vw,260px);overflow:hidden}
-.drawArt svg{display:block;width:100%;height:100%}
-.drawInfo{padding:17px}
-.drawInfo h2{font-size:18px;margin:0}
-.drawInfo p{color:#aabbd0;font-size:12px;margin:7px 0 18px}
-.drawFoot{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #39455b;padding-top:13px;font-size:12px;color:#adbbce}
-.drawFoot button{display:flex;align-items:center;gap:4px;justify-content:center;min-height:44px;border:0;border-radius:7px;padding:0 13px;color:#172039;background:#b0beff;font-weight:700}
-.drawFoot button:hover{background:#cbd5ff}
-.backButton{min-height:44px;display:inline-flex;gap:6px;align-items:center;border:1px solid #44516b;border-radius:8px;background:#283146;color:#e5edff;padding:0 12px}
-.cranePosition{display:flex;flex-direction:column;gap:10px;font-size:12px;color:#bfcee4}
-.track{position:relative;height:12px;background:#334761;border-radius:99px;margin:5px 0 8px}
-.track>i{position:absolute;top:50%;width:21px;height:21px;transform:translate(-50%,-50%);border:4px solid #ecf1ff;border-radius:50%;background:#ec91bd;box-shadow:0 3px 10px #0005}
-.craneButtons{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:7px}
-.craneButtons button{min-height:48px;padding:7px 4px;border-radius:7px;background:#bac6ff;color:#15213b;border:0;font-weight:700;font-size:12px}
-.craneButtons button:nth-child(2){background:#f197ba;color:#291626}
-.craneButtons button:disabled{opacity:.35}
 .emptyCollection{margin-top:8px;border-top:1px solid #38475d;padding-top:23px}
 .emptyCollection strong{font-size:15px;color:#e4ebfa}
 .emptyCollection p{color:#aab9ce;font-size:12px;line-height:1.7}
