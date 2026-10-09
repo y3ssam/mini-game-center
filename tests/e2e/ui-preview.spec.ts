@@ -7,7 +7,7 @@ test('dice preview reacts to a choice without changing wallet balance', async ({
   await expect(page.getByRole('heading', { name: '주사위 홀짝' })).toBeVisible();
   await expect(page.getByText('실제 코인은 차감되거나 지급되지 않습니다.')).toBeVisible();
   await page.getByRole('button', { name: '홀수 선택' }).click();
-  await expect(page.getByRole('status')).toContainText(/예측 적중|예측 실패/);
+  await expect(page.getByRole('status', { name: '게임 결과' })).toContainText(/예측 적중|예측 실패/);
   await expect(page.getByLabel('보유 코인 600 C')).toBeVisible();
   await page.getByRole('button', { name: '다시 체험하기' }).click();
   await expect(page.getByRole('button', { name: '짝수 선택' })).toBeEnabled();
@@ -20,7 +20,7 @@ test('highlow preview shows cards and can reveal the result', async ({ page }) =
   await page.getByRole('button', { name: '하이로우 화면 체험' }).click();
   await expect(page.getByRole('heading', { name: '하이로우' })).toBeVisible();
   await page.getByRole('button', { name: '▲ 높음' }).click();
-  await expect(page.getByRole('status')).toContainText(/예측 적중|예측 실패|동률/);
+  await expect(page.getByRole('status', { name: '게임 결과' })).toContainText(/예측 적중|예측 실패|동률/);
 });
 
 test('claw control prototype moves without paying coins', async ({ page }) => {
