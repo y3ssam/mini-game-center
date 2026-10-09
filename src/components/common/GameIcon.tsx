@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 export type IconName =
   | 'gamepad' | 'briefcase' | 'gift' | 'book' | 'coins' | 'settings'
   | 'cards' | 'dice' | 'roulette' | 'back' | 'chevron' | 'clock'
-  | 'claw' | 'close';
+  | 'close';
 
 const shapes: Record<IconName, ReactNode> = {
   gamepad: <><rect x="3" y="7" width="18" height="11" rx="4" /><path d="M8 10v5M5.5 12.5h5" /><circle cx="15.5" cy="11.5" r=".8" fill="currentColor" stroke="none" /><circle cx="18" cy="14" r=".8" fill="currentColor" stroke="none" /></>,
@@ -18,7 +18,6 @@ const shapes: Record<IconName, ReactNode> = {
   back: <><path d="m14 5-7 7 7 7M8 12h13" /></>,
   chevron: <path d="m9 5 7 7-7 7" />,
   clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l4 2" /></>,
-  claw: <><path d="M12 2v10M5 12h14M5 12l-2 6 4 4 2-5m10-5 2 6-4 4-2-5M9 17h6" /></>,
   close: <path d="M5 5l14 14M19 5 5 19" />,
 };
 

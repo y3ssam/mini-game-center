@@ -1,27 +1,9 @@
 import { useId } from 'react';
 import type { SVGProps } from 'react';
 
-export type ArtworkKind = 'dice' | 'highlow' | 'roulette' | 'blackjack' | 'claw' | 'gacha' | 'counter' | 'collection';
+export type ArtworkKind = 'dice' | 'highlow' | 'roulette' | 'blackjack' | 'gacha' | 'counter';
 
 type Props = SVGProps<SVGSVGElement> & { kind: ArtworkKind };
-
-function Plush({ x, y, color, scale = 1 }: { x: number; y: number; color: string; scale?: number }) {
-  return (
-    <g transform={`translate(${x} ${y}) scale(${scale})`}>
-      <ellipse cx="0" cy="31" rx="40" ry="8" fill="#000" opacity=".2" />
-      <circle cx="-23" cy="-19" r="12" fill={color} />
-      <circle cx="23" cy="-19" r="12" fill={color} />
-      <ellipse cx="0" cy="14" rx="33" ry="34" fill={color} />
-      <circle cx="0" cy="-6" r="30" fill={color} />
-      <ellipse cx="-11" cy="-8" rx="3" ry="4" fill="#263050" />
-      <ellipse cx="11" cy="-8" rx="3" ry="4" fill="#263050" />
-      <ellipse cx="0" cy="4" rx="6" ry="4" fill="#fff4e6" />
-      <path d="M-3 6Q0 10 3 6" stroke="#263050" strokeWidth="2" fill="none" />
-      <ellipse cx="-14" cy="5" rx="6" ry="3" fill="#ff9eaa" opacity=".7" />
-      <ellipse cx="14" cy="5" rx="6" ry="3" fill="#ff9eaa" opacity=".7" />
-    </g>
-  );
-}
 
 export function GameArtwork({ kind, ...props }: Props) {
   const uid = useId().replace(/:/g, '');
@@ -33,10 +15,8 @@ export function GameArtwork({ kind, ...props }: Props) {
     highlow: ['#402038', '#7a284a', '#ff9fbd'],
     roulette: ['#152e35', '#124b4a', '#eec184'],
     blackjack: ['#222b47', '#474273', '#b3acff'],
-    claw: ['#24305f', '#54529a', '#b4abff'],
     gacha: ['#4b254b', '#7d3e72', '#ff9dc3'],
     counter: ['#39293a', '#685043', '#ffc08b'],
-    collection: ['#283044', '#324965', '#c5afff'],
   };
   const [dark, mid, bright] = palette[kind];
 
@@ -137,23 +117,6 @@ export function GameArtwork({ kind, ...props }: Props) {
           </g>
         </g>
       )}
-      {kind === 'claw' && (
-        <g>
-          <rect x="67" y="20" width="346" height="262" rx="19" fill="#7389bd" stroke="#bed6ff" strokeWidth="6" />
-          <rect x="82" y="33" width="315" height="201" rx="9" fill="#223a63" stroke="#aac9f5" strokeWidth="4" />
-          <rect x="82" y="33" width="315" height="201" rx="9" fill={`url(#${glass})`} />
-          <path d="M93 49 171 49 102 185" stroke="#effbff" strokeWidth="13" opacity=".08" />
-          <g opacity=".66"><Plush x={149} y={177} color="#b7b7ff" scale={.88} /><Plush x={327} y={178} color="#f9c5d5" scale={.91} /></g>
-          <Plush x={237} y={183} color="#ffe29d" scale={1.13} />
-          <path d="M245 34V87" stroke="#dbeaff" strokeWidth="7" />
-          <rect x="218" y="69" width="53" height="29" rx="7" fill="#d9e6fc" stroke="#344467" strokeWidth="6" />
-          <path d="M227 93Q196 105 206 141M263 93Q292 105 280 141" fill="none" stroke="#edf5ff" strokeWidth="12" strokeLinecap="round" />
-          <path d="M202 140l16 7m66-7-16 7" stroke="#e2edff" strokeWidth="7" strokeLinecap="round" />
-          <rect x="67" y="238" width="346" height="44" rx="11" fill="#788ee1" />
-          <rect x="100" y="248" width="92" height="25" rx="5" fill="#17254e" />
-          <circle cx="351" cy="257" r="13" fill="#ff83ac" stroke="#fff0fa" strokeWidth="3" />
-        </g>
-      )}
       {kind === 'gacha' && (
         <g>
           <ellipse cx="241" cy="269" rx="141" ry="25" fill="#140e24" opacity=".35" />
@@ -186,19 +149,6 @@ export function GameArtwork({ kind, ...props }: Props) {
           <rect x="0" y="190" width="480" height="18" fill="#e4a47e" />
           <rect x="323" y="151" width="75" height="50" rx="6" fill="#202b3d" />
           <rect x="336" y="160" width="49" height="25" rx="4" fill="#b8e5d4" />
-        </g>
-      )}
-      {kind === 'collection' && (
-        <g>
-          <path d="M45 59h390v195H45Z" fill="#1a243e" stroke="#7a8bba" strokeWidth="9" />
-          <path d="M45 147h390M175 59v195m130-195v195" stroke="#a2b1dd" strokeWidth="5" />
-          <Plush x={106} y={117} color="#b1cbff" scale={.65} />
-          <Plush x={237} y={117} color="#ffcae4" scale={.65} />
-          <Plush x={368} y={117} color="#fae2a8" scale={.65} />
-          <circle cx="108" cy="203" r="33" fill="#aac2f8" />
-          <circle cx="237" cy="203" r="33" fill="#efb4dc" />
-          <circle cx="368" cy="203" r="33" fill="#b3dbbc" />
-          <path d="M87 203h42m-21-21v42M216 203h42m-21-21v42M348 203h40" stroke="#fff" strokeOpacity=".65" strokeWidth="5" />
         </g>
       )}
     </svg>

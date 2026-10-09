@@ -50,7 +50,7 @@ export function App() {
     <main id="main-content" className={styles.main}>
       {activePage === 'games' && <GamesView onPreviewChange={setInPreview} />}
       {activePage === 'jobs' && <JobsView />}
-      {activePage === 'draw' && <DrawView onPreviewChange={setInPreview} />}
+      {activePage === 'draw' && <DrawView />}
       {activePage === 'collection' && <CollectionView />}
     </main>
     <Navigation activePage={activePage} onSelect={navigate} location="bottom"/>

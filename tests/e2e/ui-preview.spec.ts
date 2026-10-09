@@ -23,14 +23,14 @@ test('highlow preview shows cards and can reveal the result', async ({ page }) =
   await expect(page.getByRole('status', { name: '게임 결과' })).toContainText(/예측 적중|예측 실패|동률/);
 });
 
-test('claw control prototype moves without paying coins', async ({ page }) => {
+test('draw only shows merchandise gacha and changes series without spending coins', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('navigation').getByRole('button', { name: '뽑기' }).click();
-  await page.getByRole('button', { name: '조작 체험' }).click();
-  await page.getByRole('button', { name: '집게 오른쪽 이동' }).click();
-  await expect(page.getByText('집게 위치 60%')).toBeVisible();
-  await page.getByRole('button', { name: '집게 내리기' }).click();
-  await expect(page.getByText(/획득 판정 미구현/)).toBeVisible();
+  await page.getByRole('navigation').getByRole('button', { name: '뽑기' }).last().click();
+  await expect(page.getByRole('heading', { name: '굿즈 가챠' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '인형뽑기' })).toHaveCount(0);
+  await page.getByRole('button', { name: '시리즈 B' }).click();
+  await expect(page.getByRole('button', { name: '시리즈 B' })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.getByRole('button', { name: '가챠 뽑기 · 준비 중' })).toBeDisabled();
   await expect(page.getByLabel('보유 코인 600 C')).toBeVisible();
 });
 
