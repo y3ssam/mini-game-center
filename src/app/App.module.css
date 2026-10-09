@@ -1,84 +1,36 @@
-.shell {
-  height: 100dvh;
-  min-height: 0;
-  display: grid;
-  grid-template-columns: 192px minmax(0, 1fr);
-  grid-template-rows: 56px minmax(0, 1fr);
-  background: var(--color-bg);
-}
-.headerSlot { grid-column: 1 / -1; grid-row: 1; min-width: 0; }
-.statusBar {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 0 24px;
-  border-bottom: 1px solid var(--color-border);
-}
-.statusTitle { font-size: 15px; font-weight: 700; }
-.statusActions { display: flex; align-items: center; gap: 12px; }
-.coinAmount { display: inline-flex; gap: 8px; align-items: center; white-space: nowrap; color: var(--color-coin); font-variant-numeric: tabular-nums; font-weight: 700; }
-.iconButton { width: 44px; height: 44px; display: inline-flex; justify-content: center; align-items: center; border: 0; border-radius: 8px; color: var(--color-text-muted); background: transparent; }
-.iconButton:hover { color: var(--color-text); background: var(--color-surface); }
-.sidebar {
-  grid-column: 1;
-  grid-row: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 16px 10px;
-  border-right: 1px solid var(--color-border);
-  background: var(--color-bg);
-}
-.navItem {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-  min-height: 44px;
-  padding: 10px 13px;
-  border: 0;
-  border-radius: 8px;
-  background: transparent;
-  color: var(--color-text-muted);
-  text-align: left;
-}
-.navItem:hover { color: var(--color-text); background: var(--color-surface); }
-.navItem[aria-current="page"] { color: var(--color-accent); background: var(--color-surface); font-weight: 600; }
-.main { grid-column: 2; grid-row: 2; min-width: 0; min-height: 0; padding: 28px 32px 48px; overflow-y: auto; overscroll-behavior: contain; }
-.bottomNav { display: none; }
-.modalBackdrop { position: fixed; z-index: 20; inset: 0; padding: 16px; background: #000a; display: grid; place-items: center; }
-.modal { width: min(100%, 420px); max-height: calc(100dvh - 32px); overflow-y: auto; padding: 20px; border-radius: 12px; background: var(--color-surface); border: 1px solid var(--color-border); box-shadow: 0 18px 60px #0008; }
-.modalHeading { display: flex; justify-content: space-between; align-items: center; }
-.modalHeading h2 { margin: 0; font-size: 18px; }
-.modal p { color: var(--color-text); }
-.modal .hint { color: var(--color-text-muted); font-size: 13px; }
-@media (max-width: 768px) {
-  .shell { grid-template-columns: minmax(0, 1fr); grid-template-rows: 52px minmax(0, 1fr) calc(64px + env(safe-area-inset-bottom, 0px)); }
-  .statusBar { padding: 0 12px 0 16px; }
-  .sidebar { display: none; }
-  .main { grid-column: 1; grid-row: 2; padding: 20px 16px 28px; }
-  .bottomNav {
-    display: flex;
-    grid-column: 1;
-    grid-row: 3;
-    justify-content: space-around;
-    padding: 0 5px env(safe-area-inset-bottom, 0px);
-    border-top: 1px solid var(--color-border);
-    background: var(--color-bg);
-  }
-  .bottomNav .navItem {
-    flex: 1;
-    min-width: 0;
-    min-height: 64px;
-    gap: 3px;
-    flex-direction: column;
-    justify-content: center;
-    padding: 8px 1px;
-    border-radius: 0;
-    text-align: center;
-    font-size: 11px;
-  }
-  .coinAmount { font-size: 13px; }
+.shell{height:100dvh;min-height:0;display:grid;grid-template-columns:186px minmax(0,1fr);grid-template-rows:60px minmax(0,1fr);background:#121722}
+.statusBar{grid-row:1;grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #2a3549;background:#151c2a;padding:0 24px;min-width:0}
+.statusTitle{display:flex;align-items:center;gap:12px;color:#f5f7ff;font-size:15px;font-weight:750;letter-spacing:-.02em}
+.statusTitle svg{color:#a3b5ff}
+.statusActions{display:flex;align-items:center;gap:17px}
+.coinAmount{display:flex;align-items:center;gap:9px;min-height:38px;padding:0 14px;border:1px solid #354054;border-radius:9px;background:#1b2637;color:#ffd891;font-size:15px;font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}
+.iconButton{display:flex;justify-content:center;align-items:center;width:44px;height:44px;border:0;border-radius:8px;color:#aebbd2;background:transparent}
+.iconButton:hover{background:#273348;color:#fff}
+.sidebar{grid-row:2;grid-column:1;display:flex;flex-direction:column;gap:6px;border-right:1px solid #2a3549;background:#151c2a;padding:23px 11px}
+.navItem{display:flex;align-items:center;gap:13px;width:100%;min-height:50px;flex-shrink:0;text-align:left;padding:10px 15px;border:0;border-radius:8px;background:transparent;color:#a9b7ca;font-weight:650;font-size:14px}
+.navItem:hover{background:#242e43;color:#fff}
+.navItem[aria-current=page]{color:#e8ebff;background:linear-gradient(90deg,#384465,#252e43);box-shadow:inset 3px 0 #b1bfff}
+.navItem[aria-current=page] svg{color:#aebcff}
+.main{grid-row:2;grid-column:2;min-width:0;min-height:0;overflow:auto;overscroll-behavior:contain;padding:29px 34px 50px;background:radial-gradient(ellipse at top left,#1b2436 0,#121722 50%)}
+.bottomNav{display:none}
+.modalBackdrop{position:fixed;inset:0;z-index:30;padding:16px;background:#050912c2;display:grid;place-items:center}
+.modal{width:min(100%,420px);max-height:calc(100dvh - 32px);overflow:auto;border:1px solid #50607a;border-radius:13px;padding:18px 20px;background:#1b2434;box-shadow:0 20px 70px #000a}
+.modalHeading{display:flex;align-items:center;justify-content:space-between}
+.modalHeading h2{margin:0;font-size:18px}
+.modal p{margin:12px 0;color:#dce5f4}
+.modal .hint{color:#a6b4c9;font-size:12px}
+@media(max-width:768px){
+.shell{grid-template-columns:minmax(0,1fr);grid-template-rows:52px minmax(0,1fr) calc(64px + env(safe-area-inset-bottom,0px))}
+.statusBar{grid-column:1;grid-row:1;padding:0 8px 0 15px}
+.statusTitle{font-size:14px;gap:8px}
+.statusActions{gap:4px}
+.coinAmount{padding:0 10px;font-size:13px}
+.sidebar{display:none}
+.main{grid-column:1;grid-row:2;padding:18px 14px 30px;background:#131925}
+.bottomNav{display:flex;grid-column:1;grid-row:3;gap:2px;justify-content:space-around;border-top:1px solid #303b50;background:#182030;padding:0 4px env(safe-area-inset-bottom,0px)}
+.bottomNav .navItem{flex:1;min-width:0;min-height:64px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:7px 1px;border-radius:0;font-size:11px}
+.bottomNav .navItem[aria-current=page]{background:transparent;box-shadow:inset 0 3px #b1bfff;color:#b6c8ff}
+.playing{grid-template-rows:52px minmax(0,1fr)}
+.playing .bottomNav{display:none}
+.playing .main{padding:12px 10px 24px}
 }
