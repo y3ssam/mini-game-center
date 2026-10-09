@@ -73,7 +73,7 @@ function PreviewScreen({ kind, back }: { kind: Preview; back: () => void }) {
               <div className={styles.card}><small>현재</small><strong>{rankLabel(rank)}</strong><b>♥</b></div>
               <div className={next === null ? styles.cardBack : styles.card}><small>다음</small><strong>{next === null ? '?' : rankLabel(next)}</strong><b>{next === null ? '' : '♠'}</b></div>
             </div>}
-          <div className={styles.result} aria-live="polite" role="status">
+          <div className={styles.result} aria-live="polite" role="status" aria-label="게임 결과">
             {guess === null
               ? (isDice ? '합계가 홀수일까, 짝수일까?' : '다음 카드가 높을까, 낮을까?')
               : <><strong>{!isDice && next === rank ? '동률 · 무승부' : won ? '예측 적중' : '예측 실패'}</strong>
