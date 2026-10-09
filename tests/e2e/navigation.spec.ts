@@ -6,7 +6,7 @@ test('switches between four primary menus', async ({ page }) => {
 
   for (const label of ['알바', '뽑기', '도감', '게임장']) {
     await page.getByRole('navigation').getByRole('button', { name: label }).last().click();
-    await expect(page.getByRole('heading', { name: label })).toBeVisible();
+    await expect(page.getByRole('heading', { name: label, exact: true })).toBeVisible();
   }
 });
 
