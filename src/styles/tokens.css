@@ -1,0 +1,19 @@
+:root {
+  font-family: Pretendard, 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+  --color-bg: #14171d;
+  --color-surface: #1e222b;
+  --color-border: #353b47;
+  --color-accent: #9baaf5;
+  --color-coin: #f0c778;
+  --color-text: #f5f7fa;
+  --color-text-muted: #adb6c4;
+  --color-success: #72d6a6;
+  --color-danger: #ff929d;
+  --color-disabled: #777f8d;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --radius-default: 8px;
+}
