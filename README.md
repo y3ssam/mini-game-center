@@ -1,21 +1,43 @@
 # Mini Game Center
 
-PC와 모바일에서 플레이하는 싱글 플레이 **복합 게임장 웹 게임**.
+PC와 모바일에서 플레이하는 싱글 플레이 **복합 게임장 웹 게임**. 게임 속 가상 코인(C)만 사용하며 현금 입금·베팅·환전 또는 현금성 보상은 제공하지 않습니다.
 
-- **게임장:** 하이로우, 주사위, 룰렛, 블랙잭 등 가상 코인 베팅 미니게임
-- **알바:** 방치 수익과 직접 조작형 아르바이트
-- **뽑기:** 2D 인형뽑기와 굿즈 가챠
-- **도감:** 획득한 인형·굿즈 관리와 수집 현황
+## 현재 구현 상태
 
-실제 화폐의 입금, 베팅, 환전, 현금성 보상은 제공하지 않습니다.
+**1차 개발 진행 중 — 기본 UI 구동 및 테스트 완료.**
 
-## 프로젝트 현황
+- 구현: React 앱 구동, PC 좌측 메뉴 / 모바일 하단 메뉴, 게임장·알바·뽑기·도감 전환, 게임 목록 필터, 설정 다이얼로그.
+- 경제 기초: 공통 지갑 초기 잔액(600 C), Zustand 상태 및 localStorage 지속화 구조, 정수 잔액 검증·중복 거래 방지 순수 함수.
+- **미구현:** 실제 알바 수익·급여 수령, 하이로우/주사위 플레이, 인형뽑기, 굿즈 가챠, 도감. 미구현 콘텐츠는 화면에서 **준비 중**으로 표시합니다.
 
-**기획 및 문서 초기화 단계.** 게임 기능은 아직 구현되지 않았습니다. 구현 여부는 [로드맵](docs/ROADMAP.md)을 기준으로 확인합니다.
+완료 여부는 [로드맵](docs/ROADMAP.md)을 기준으로 확인합니다.
 
-## 기술 스택 (예정)
+## 로컬 실행
 
-React + TypeScript + Vite / CSS Modules + CSS Variables / Zustand / 필요시 Phaser / localStorage / Vitest / Playwright
+Node.js **20.19 이상**이 필요합니다. Node.js 22 권장.
+
+```bash
+npm install
+npm run dev
+```
+
+브라우저에서 터미널에 안내되는 Vite 로컬 주소를 열면 됩니다.
+
+```bash
+npm run typecheck     # TypeScript 검사
+npm run build         # 프로덕션 빌드
+npm test              # Vitest 단위 테스트
+npx playwright install chromium
+npm run test:e2e      # Playwright PC/모바일 UI 테스트
+```
+
+GitHub Actions에서 타입 검사·빌드·단위 테스트 및 데스크톱/모바일 Chromium UI 테스트를 수행합니다.
+
+## 기술 스택
+
+- 구현 중: React + TypeScript + Vite, CSS Modules + CSS Variables, Zustand, localStorage
+- 테스트: Vitest, Playwright
+- 추후 필요할 때 도입: Phaser (조작형 2D 인형뽑기)
 
 ## 문서
 
@@ -25,4 +47,4 @@ React + TypeScript + Vite / CSS Modules + CSS Variables / Zustand / 필요시 Ph
 - [개발 순서 및 현황](docs/ROADMAP.md)
 - [개발 에이전트 작업 규칙](AGENTS.md)
 
-추가 라이브러리는 기존 의존성을 확인하고 도입합니다. 초기 기획 문서의 수치는 검증 전 설정안이며 구현 완료를 의미하지 않습니다.
+기획 문서의 게임 규칙·밸런스 수치는 구현 전 설정안이며, 구현 완료를 의미하지 않습니다.
